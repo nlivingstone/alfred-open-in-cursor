@@ -147,9 +147,7 @@ Test opening a project from the terminal:
 
 Publishing to npm is automated when you publish a GitHub release.
 
-1. Configure npm publishing for GitHub Actions using **one** of these options:
-
-   **Option A — Trusted publishing (recommended)**
+1. Configure **trusted publishing** on npm (required — classic and automation tokens were revoked in December 2025):
 
    On [npm → alfred-open-in-cursor → Settings → Publishing access → Trusted Publishers](https://www.npmjs.com/package/alfred-open-in-cursor/access), add:
 
@@ -157,18 +155,9 @@ Publishing to npm is automated when you publish a GitHub release.
    - **Repository:** `nlivingstone/alfred-open-in-cursor`
    - **Workflow filename:** `release.yml`
 
-   Trusted publishing uses OIDC and does not require an OTP during CI publishes.
+   The release workflow uses Node.js 24 (npm ≥ 11.5.1) and OIDC — no npm token secret is needed.
 
-   If you use trusted publishing, **delete the `NPM_TOKEN` secret** from GitHub repository settings. Leaving a **Publish** token in place makes npm require a one-time password (`EOTP`) even when provenance signing succeeds.
-
-   **Option B — Automation token**
-
-   If you are not using trusted publishing, create an npm token with type **Automation** (not **Publish**).  
-   [npm → Access Tokens](https://www.npmjs.com/settings/~tokens)
-
-   Publish tokens require a one-time password and will fail in GitHub Actions with `EOTP`.
-
-   Add the token as the `NPM_TOKEN` repository secret in GitHub.
+   Remove any `NPM_TOKEN` secret from GitHub repository settings. A leftover token can override OIDC and cause `EOTP` or `ENEEDAUTH` failures.
 
 2. Install the [GitHub CLI](https://cli.github.com/) and authenticate with `gh auth login`
 3. From `main`, run:

@@ -20,13 +20,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org
+          # npm >= 11.5.1 is required for trusted publishing (OIDC)
+          node-version: 24
           package-manager-cache: false
-        env:
-          # Optional: Automation token only. Do not set NPM_TOKEN when using
-          # trusted publishing — a Publish token here causes EOTP in CI.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -45,4 +41,7 @@ jobs:
           fi
 
       - name: Publish to npm
-        run: npm publish --access=public --ignore-scripts --provenance
+        run: |
+          # setup-node registry-url writes an empty _authToken line that blocks OIDC
+          unset NODE_AUTH_TOKEN
+          npm publish --access=public --ignore-scripts --provenance
