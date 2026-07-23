@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to **alfred-open-in-cursor** are documented below.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-This project is a fork of [vivaxy/alfred-open-in-vscode](https://github.com/vivaxy/alfred-open-in-vscode). Entries under [Upstream changelog](#upstream-changelog-alfred-open-in-vscode) are from the original project.
+### 1.1.1 (2026-07-23)
 
 ## [1.1.0] - 2026-07-23
 
