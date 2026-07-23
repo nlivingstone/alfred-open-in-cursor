@@ -149,33 +149,36 @@ Publishing to npm is automated when you publish a GitHub release.
 
 1. Add an npm **Automation** or **Publish** token as the `NPM_TOKEN` repository secret  
    ([npm → Access Tokens](https://www.npmjs.com/settings/~tokens))
-2. Bump the version locally:
+2. Install the [GitHub CLI](https://cli.github.com/) and authenticate with `gh auth login`
+3. From `main`, run:
 
    ```bash
-   npm run release:patch
+   ./scripts/release.sh patch
    # or
-   npm run release:minor
-   npm run release:major
+   ./scripts/release.sh minor
+   ./scripts/release.sh major
+   # or
+   npm run release:github -- patch
    ```
 
-   This updates `package.json`, `package-lock.json`, `info.plist`, and `CHANGELOG.md`, then creates a commit and tag (for example `v1.1.1`).
+   This will:
 
-3. Push the commit and tag:
-
-   ```bash
-   git push --follow-tags origin main
-   ```
-
-4. Create a GitHub release from the new tag  
-   (**GitHub → Releases → Draft a new release**), or:
-
-   ```bash
-   gh release create v1.1.1 --generate-notes
-   ```
+   - Bump `package.json`, `package-lock.json`, `info.plist`, and `CHANGELOG.md`
+   - Create the release commit and tag (for example `v1.1.2`)
+   - Push to GitHub
+   - Run `gh release create v1.1.2 --generate-notes`
 
 When the GitHub release is published, the **Publish to npm** workflow runs tests and publishes that tag to [npm](https://www.npmjs.com/package/alfred-open-in-cursor).
 
-The release tag must match `package.json` (for example tag `v1.1.1` → version `1.1.1`).
+The release tag must match `package.json` (for example tag `v1.1.2` → version `1.1.2`).
+
+To bump the version locally without creating a GitHub release:
+
+```bash
+npm run release:patch
+npm run release:minor
+npm run release:major
+```
 
 ## Related
 
