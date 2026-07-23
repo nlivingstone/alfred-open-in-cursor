@@ -29,11 +29,6 @@
     "alfred-notifier": "file:vendor/alfred-notifier",
     "fast-glob": "^3.3.3"
   },
-  "overrides": {
-    "alfred-link": "$alfred-link",
-    "alfred-notifier": "$alfred-notifier",
-    "plist": "^3.1.1"
-  },
   "scripts": {
     "release": "standard-version",
     "release:patch": "standard-version --release-as patch",

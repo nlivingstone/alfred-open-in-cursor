@@ -65,6 +65,10 @@ To uninstall:
 npm uninstall -g alfred-open-in-cursor
 ```
 
+#### npm deprecation warnings
+
+`npm i -g alfred-open-in-cursor` may print deprecation warnings for packages such as `xmldom`, `rimraf`, `glob`, and `inflight`. These come from older transitive dependencies in [Alfy](https://github.com/sindresorhus/alfy) and its bundled [alfred-link](https://github.com/SamVerschueren/alfred-link) / [alfred-notifier](https://github.com/SamVerschueren/alfred-notifier) packages. They are install-time notices only and do not affect the workflow after installation. The warnings should disappear once upstream merges dependency updates.
+
 ### Install from source
 
 For local development or contributing:
