@@ -1,5 +1,8 @@
 # Alfred Open in Cursor
 
+[![npm version](https://img.shields.io/npm/v/alfred-open-in-cursor.svg?style=flat-square)](https://www.npmjs.com/package/alfred-open-in-cursor)
+[![npm downloads](https://img.shields.io/npm/dt/alfred-open-in-cursor.svg?style=flat-square)](https://www.npmjs.com/package/alfred-open-in-cursor)
+
 Alfred workflow to quickly open projects in [Cursor](https://cursor.com/).
 
 > **Fork notice:** This project is a fork of [vivaxy/alfred-open-in-vscode](https://github.com/vivaxy/alfred-open-in-vscode), originally created by [vivaxy](https://github.com/vivaxy). It has been updated to work with Cursor, including opening projects in classic editor mode via the `--classic` flag.
@@ -19,9 +22,46 @@ Alfred workflow to quickly open projects in [Cursor](https://cursor.com/).
 
 ## Installation
 
-### Install from a local checkout
+### Install from npm (recommended)
 
-From your local clone of this repository:
+Requires [Node.js](https://nodejs.org/) and [Alfred](https://www.alfredapp.com/) with Powerpack.
+
+```bash
+npm i -g alfred-open-in-cursor
+```
+
+This installs the workflow globally and links it into Alfred via [Alfy](https://github.com/sindresorhus/alfy).
+
+Then configure it in Alfred:
+
+1. Open **Alfred → Workflows**
+2. Select **Open in Cursor**
+3. Click the `[x]` configuration button
+4. Set **Project directories** to a glob pattern for your projects, for example:
+
+   ```
+   /Users/me/Developer/*
+   ```
+
+5. Optionally set **Cursor CLI path** if auto-detection does not work on your machine
+
+Try it: type `cursor` followed by a space in Alfred to search for a project.
+
+To update later:
+
+```bash
+npm update -g alfred-open-in-cursor
+```
+
+To uninstall:
+
+```bash
+npm uninstall -g alfred-open-in-cursor
+```
+
+### Install from source
+
+For local development or contributing:
 
 ```bash
 git clone https://github.com/nlivingstone/alfred-open-in-cursor.git
@@ -30,15 +70,7 @@ npm install
 npm i -g .
 ```
 
-This symlinks the workflow into Alfred via [Alfy](https://github.com/sindresorhus/alfy). A global install (`npm i -g .`) is required; a local-only `npm install` does not link the workflow.
-
-### Install from npm
-
-If published:
-
-```bash
-npm i -g alfred-open-in-cursor
-```
+A global install (`npm i -g .`) is required; a local-only `npm install` does not link the workflow to Alfred.
 
 ## Configuration
 
@@ -86,16 +118,10 @@ This opens a new classic editor window rather than focusing an existing Cursor w
   ```
 
 - After editing workflow files locally, reload the workflow in Alfred (right-click → **Reload**).
-- To reinstall:
+- To reinstall from npm:
 
   ```bash
-  npm i -g /path/to/alfred-open-in-cursor
-  ```
-
-- To remove:
-
-  ```bash
-  npm uninstall -g alfred-open-in-cursor
+  npm i -g alfred-open-in-cursor
   ```
 
 ## Development
