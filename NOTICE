@@ -1,0 +1,15 @@
+Alfred Open in Cursor
+Copyright (C) 2026 Neil Livingstone
+
+This program is a modified work based on alfred-open-in-vscode:
+  https://github.com/vivaxy/alfred-open-in-vscode
+
+Copyright (C) 2019 vivaxy
+
+Both the original work and this modified work are licensed under the
+GNU General Public License v3.0 or later. See LICENSE for the full
+license text.
+
+The original author retains copyright to their contributions. Modifications
+in this fork include adaptation for Cursor, portable Cursor CLI detection,
+and related workflow updates.
