@@ -2,29 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.1.11](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.10...v1.1.11) (2026-07-23)
+## [1.0.0] - 2026-07-23
 
-### [1.1.10](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.9...v1.1.10) (2026-07-23)
-
-### [1.1.9](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.8...v1.1.9) (2026-07-23)
-
-### [1.1.8](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.7...v1.1.8) (2026-07-23)
-
-### [1.1.7](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.6...v1.1.7) (2026-07-23)
-
-### [1.1.6](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.5...v1.1.6) (2026-07-23)
-
-### [1.1.5](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.4...v1.1.5) (2026-07-23)
-
-### [1.1.4](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.3...v1.1.4) (2026-07-23)
-
-### [1.1.3](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.2...v1.1.3) (2026-07-23)
-
-### [1.1.2](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.1...v1.1.2) (2026-07-23)
-
-### 1.1.1 (2026-07-23)
-
-## [1.1.0] - 2026-07-23
+Initial public release of the Cursor fork.
 
 ### Added
 
@@ -32,6 +12,8 @@ All notable changes to this project will be documented in this file. See [standa
 - Portable Cursor CLI auto-detection (`bin/find-cursor-cli.sh`)
 - Optional **Cursor CLI path** workflow configuration
 - `open-project.sh` and `open-finder-folder.sh` helper scripts
+- npm install via `npm i -g alfred-open-in-cursor`
+- GitHub Actions CI and trusted-publishing npm release workflow
 - `NOTICE` file and source copyright headers for GPL attribution
 
 ### Changed
