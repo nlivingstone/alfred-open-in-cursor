@@ -143,52 +143,7 @@ Test opening a project from the terminal:
 ./open-project.sh /path/to/project
 ```
 
-### Releasing
-
-Publishing to npm is automated when you publish a GitHub release.
-
-1. Configure **trusted publishing** on npm (required — classic and automation tokens were revoked in December 2025):
-
-   On [npm → alfred-open-in-cursor → Settings → Publishing access → Trusted Publishers](https://www.npmjs.com/package/alfred-open-in-cursor/access), add:
-
-   - **Provider:** GitHub Actions
-   - **Repository:** `nlivingstone/alfred-open-in-cursor`
-   - **Workflow filename:** `release.yml`
-
-   The release workflow uses Node.js 24 (npm ≥ 11.5.1) and OIDC — no npm token secret is needed.
-
-   Remove any `NPM_TOKEN` secret from GitHub repository settings. A leftover token can override OIDC and cause `EOTP` or `ENEEDAUTH` failures.
-
-2. Install the [GitHub CLI](https://cli.github.com/) and authenticate with `gh auth login`
-3. From `main`, run:
-
-   ```bash
-   ./scripts/release.sh patch
-   # or
-   ./scripts/release.sh minor
-   ./scripts/release.sh major
-   # or
-   npm run release:github -- patch
-   ```
-
-   This will:
-
-   - Bump `package.json`, `package-lock.json`, `info.plist`, and `CHANGELOG.md`
-   - Create the release commit and tag (for example `v1.1.2`)
-   - Push to GitHub
-   - Run `gh release create v1.1.2 --generate-notes`
-
-When the GitHub release is published, the **Publish to npm** workflow runs tests and publishes that tag to [npm](https://www.npmjs.com/package/alfred-open-in-cursor).
-
-The release tag must match `package.json` (for example tag `v1.1.2` → version `1.1.2`).
-
-To bump the version locally without creating a GitHub release:
-
-```bash
-npm run release:patch
-npm run release:minor
-npm run release:major
-```
+See the [Releasing wiki page](https://github.com/nlivingstone/alfred-open-in-cursor/wiki/Releasing) for version bumps, GitHub releases, and npm publishing.
 
 ## Related
 
