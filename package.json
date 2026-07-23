@@ -24,8 +24,15 @@
   "homepage": "https://github.com/nlivingstone/alfred-open-in-cursor#readme",
   "type": "module",
   "dependencies": {
-    "alfy": "^2.0.0",
-    "fast-glob": "^3.0.4"
+    "alfy": "^3.1.0",
+    "alfred-link": "file:vendor/alfred-link",
+    "alfred-notifier": "file:vendor/alfred-notifier",
+    "fast-glob": "^3.3.3"
+  },
+  "overrides": {
+    "alfred-link": "$alfred-link",
+    "alfred-notifier": "$alfred-notifier",
+    "plist": "^3.1.1"
   },
   "scripts": {
     "release": "standard-version",
@@ -33,33 +40,15 @@
     "release:minor": "standard-version --release-as minor",
     "release:major": "standard-version --release-as major",
     "release:github": "./scripts/release.sh",
-    "postinstall": "alfy-init # husky install",
+    "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup",
-    "prepublishOnly": "# pinst --disable",
-    "postpublish": "# pinst --enable",
     "test": "vitest run"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
     "@types/node": "^20.14.9",
-    "husky": "6",
-    "lint-staged": "^11.0.0",
-    "pinst": "^2.1.4",
     "prettier": "^2.2.1",
     "standard-version": "^9.1.0",
     "typescript": "^5.5.3",
     "vitest": "^1.6.0"
-  },
-  "lint-staged": {
-    "*.{js,ts,css,less,json,md,html,yml,yaml,pcss,jsx,tsx}": [
-      "prettier --write"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "packageManager": "npm@8.19.4"
+  }
 }

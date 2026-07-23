@@ -13,3 +13,7 @@ license text.
 The original author retains copyright to their contributions. Modifications
 in this fork include adaptation for Cursor, portable Cursor CLI detection,
 and related workflow updates.
+
+This package vendors patched MIT-licensed Alfy helpers (alfred-link,
+alfred-notifier) under vendor/ to avoid deprecated npm transitive
+dependencies during global install. See vendor/README.md.

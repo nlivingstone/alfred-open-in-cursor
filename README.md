@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/alfred-logo.png" alt="Alfred" width="128" />
+  <img src="assets/alfred-logo-macos.png" alt="Alfred" width="128" />
   &nbsp;&nbsp;
   <img src="assets/cursor-logo.png" alt="Cursor" width="128" />
 </p>

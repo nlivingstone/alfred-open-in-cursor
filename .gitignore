@@ -7,3 +7,4 @@ coverage.lcov
 coverage
 yarn.lock
 prefs.plist
+*.tgz
