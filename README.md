@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="assets/alfred-logo.png" alt="Alfred" width="128" />
+  &nbsp;&nbsp;
+  <img src="assets/cursor-logo.png" alt="Cursor" width="128" />
+</p>
+
 # Alfred Open in Cursor
 
 [![npm version](https://img.shields.io/npm/v/alfred-open-in-cursor.svg?style=flat-square)](https://www.npmjs.com/package/alfred-open-in-cursor)
