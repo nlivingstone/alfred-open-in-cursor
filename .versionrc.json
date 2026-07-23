@@ -1,6 +1,14 @@
 {
   "bumpFiles": [
     {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "package-lock.json",
+      "type": "json"
+    },
+    {
       "filename": "info.plist",
       "updater": "./scripts/plist-version-updater.cjs"
     }
