@@ -44,4 +44,7 @@ jobs:
         run: |
           # setup-node registry-url writes an empty _authToken line that blocks OIDC
           unset NODE_AUTH_TOKEN
-          npm publish --access=public --ignore-scripts --provenance
+          VERSION="$(node -p "require('./package.json').version")"
+          # Avoid failing when publishing a lower version than an existing latest tag
+          npm publish --access=public --ignore-scripts --provenance --tag "release-${VERSION}"
+          npm dist-tag add "alfred-open-in-cursor@${VERSION}" latest
