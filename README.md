@@ -147,8 +147,27 @@ Test opening a project from the terminal:
 
 Publishing to npm is automated when you publish a GitHub release.
 
-1. Add an npm **Automation** or **Publish** token as the `NPM_TOKEN` repository secret  
-   ([npm → Access Tokens](https://www.npmjs.com/settings/~tokens))
+1. Configure npm publishing for GitHub Actions using **one** of these options:
+
+   **Option A — Trusted publishing (recommended)**
+
+   On [npm → alfred-open-in-cursor → Settings → Publishing access → Trusted Publishers](https://www.npmjs.com/package/alfred-open-in-cursor/access), add:
+
+   - **Provider:** GitHub Actions
+   - **Repository:** `nlivingstone/alfred-open-in-cursor`
+   - **Workflow filename:** `release.yml`
+
+   Trusted publishing uses OIDC and does not require an OTP during CI publishes.
+
+   **Option B — Automation token**
+
+   If you are not using trusted publishing, create an npm token with type **Automation** (not **Publish**).  
+   [npm → Access Tokens](https://www.npmjs.com/settings/~tokens)
+
+   Publish tokens require a one-time password and will fail in GitHub Actions with `EOTP`.
+
+   Add the token as the `NPM_TOKEN` repository secret in GitHub.
+
 2. Install the [GitHub CLI](https://cli.github.com/) and authenticate with `gh auth login`
 3. From `main`, run:
 

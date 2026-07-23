@@ -4,9 +4,13 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout release tag
         uses: actions/checkout@v4
@@ -36,6 +40,6 @@ jobs:
           fi
 
       - name: Publish to npm
-        run: npm publish --access=public --ignore-scripts
+        run: npm publish --access=public --ignore-scripts --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
