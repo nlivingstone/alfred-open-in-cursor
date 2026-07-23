@@ -28,7 +28,10 @@
     "fast-glob": "^3.0.4"
   },
   "scripts": {
-    "release": "standard-version && npm publish --access=public && git push --follow-tags",
+    "release": "standard-version",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
     "postinstall": "alfy-init # husky install",
     "preuninstall": "alfy-cleanup",
     "prepublishOnly": "# pinst --disable",

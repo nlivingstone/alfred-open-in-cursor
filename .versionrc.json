@@ -1,0 +1,8 @@
+{
+  "bumpFiles": [
+    {
+      "filename": "info.plist",
+      "updater": "./scripts/plist-version-updater.cjs"
+    }
+  ]
+}
