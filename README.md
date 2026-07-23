@@ -24,7 +24,7 @@ Alfred workflow to quickly open projects in [Cursor](https://cursor.com/).
 
 - [Alfred](https://www.alfredapp.com/) 4 or 5 with Powerpack
 - [Cursor](https://cursor.com/) for macOS
-- [Node.js](https://nodejs.org/) (used by the workflow script filter)
+- [Node.js](https://nodejs.org/) 22 or later (used by the workflow script filter)
 
 ## Installation
 
@@ -158,6 +158,8 @@ Publishing to npm is automated when you publish a GitHub release.
    - **Workflow filename:** `release.yml`
 
    Trusted publishing uses OIDC and does not require an OTP during CI publishes.
+
+   If you use trusted publishing, **delete the `NPM_TOKEN` secret** from GitHub repository settings. Leaving a **Publish** token in place makes npm require a one-time password (`EOTP`) even when provenance signing succeeds.
 
    **Option B — Automation token**
 
