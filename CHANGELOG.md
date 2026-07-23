@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.7...v1.1.8) (2026-07-23)
+
 ### [1.1.7](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.6...v1.1.7) (2026-07-23)
 
 ### [1.1.6](https://github.com/nlivingstone/alfred-open-in-cursor/compare/v1.1.5...v1.1.6) (2026-07-23)
