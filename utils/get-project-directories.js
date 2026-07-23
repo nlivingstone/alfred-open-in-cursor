@@ -12,10 +12,12 @@ import glob from 'fast-glob';
  * @returns Promise<Array<string>>
  */
 export async function getProjectDirectories(globPattern) {
-  return await glob(globPattern, {
+  const directories = await glob(globPattern, {
     cwd: '/',
     onlyDirectories: true,
     dot: true,
     suppressErrors: true,
   });
+
+  return directories.sort();
 }
